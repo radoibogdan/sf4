@@ -30,6 +30,7 @@
                     <td>{{ product.price|number_format(2, '.', ' ') }}</td> {#nb de déci,sép déci et entiers,sép de milliers#}
                     <td>{{ product.quantity }}</td>
                     <td>
+                        {# Passer un argument à un PATH #}
                         <a href="{{ path('product_edit', {id:product.id}) }}" class="btn btn-primary">
                             Modifier
                         </a>

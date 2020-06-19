@@ -1,9 +1,36 @@
 {% extends "base.html.twig"%}
 
 {% block title %}
-    Ajout Produit
+    Ajouter un produit
 {% endblock %}
 
 {% block body %}
-    <h1>La page pour ajouter des produits</h1>
+    <h1>Ajouter un produit</h1>
+    {# L'affichage dans le formulaire TWIG #}
+    {# La logique dqns le ProductFormType #}
+    {# Ouvrir & fermer le formulaire #}
+    {{ form_start(product_form) }}
+
+        {{ form_row(product_form.name,{
+            label: 'Nom du produit:'
+        }) }}
+
+        {{ form_row(product_form.description,{
+            label: 'Description:'
+        }) }}
+
+        {{ form_row(product_form.price,{
+            label: 'Prix:'
+        }) }}
+
+        {{ form_row(product_form.quantity,{
+            label: 'Quantité en stock:'
+        }) }}
+
+        <button type="submit" class="btn btn-success btn-block">
+            Ajouter un nouveau produit
+        </button>
+
+    {{ form_end(product_form)}}
+
 {% endblock %}
